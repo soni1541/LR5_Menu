@@ -13,6 +13,7 @@
         android:layout_marginStart="104dp"
         android:layout_marginTop="264dp"
         android:backgroundTint="#FFC107"
+        android:onClick="onclick_notification"
         android:scaleType="fitCenter"
         android:src="@drawable/baseline_notifications_active_24"
         app:layout_constraintStart_toStartOf="parent"
