@@ -3,6 +3,7 @@ package com.example.lr5_menu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,9 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,5 +71,34 @@ public class MainActivity extends AppCompatActivity {
         email.getText().clear();
         Toast toast = Toast.makeText(getApplicationContext(), "Данные отправлены успешно", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void onclick_test (View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.baseline_done_outline_24);
+        String[] items = {"Огурец","Жёлудь","Апельсин","Смородина"};
+
+        List<String> fruit_list = Arrays.asList(items);
+
+        boolean[] checkItems = {false, false, false, false};
+
+        builder.setMultiChoiceItems(items, checkItems, (dialog, which, isChecked) -> {
+            checkItems[which] = isChecked;
+            String currentItem = fruit_list.get(which);
+            if(currentItem == "Апельсин")
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), "Всё верно", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), currentItem +" - это не фрукт", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        builder.show();
+        builder.create();
+
     }
 }
