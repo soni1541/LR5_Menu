@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -55,5 +58,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         bottomNavigationView.setSelectedItemId(R.id.support_btn);
+    }
+
+    public void onclick_support(View view){
+        EditText fio = findViewById(R.id.editTextTextPersonName);
+        fio.getText().clear();
+        EditText email = findViewById(R.id.editTextTextPersonName2);
+        email.getText().clear();
+        Toast toast = Toast.makeText(getApplicationContext(), "Данные отправлены успешно", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
