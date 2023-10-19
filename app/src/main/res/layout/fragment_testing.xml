@@ -8,22 +8,23 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="296dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="66dp"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="300dp"
         android:layout_marginBottom="48dp"
         android:text="Что из представленного является фруктом?"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_width="234dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="52dp"
         android:layout_marginBottom="483dp"
         android:onClick="onclick_test"
         android:text="Ответить"
