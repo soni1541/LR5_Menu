@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="78dp"
         android:layout_marginBottom="311dp"
+        android:backgroundTint="#2196F3"
         android:onClick="onclick_support"
         android:text="Отправить"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,5 +45,15 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="16dp"
+        android:text="Казунина Софья Т-403901 ИСиТ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

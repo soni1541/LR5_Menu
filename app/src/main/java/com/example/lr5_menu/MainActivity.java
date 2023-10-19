@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -96,11 +97,15 @@ public class MainActivity extends AppCompatActivity {
         builder.setMultiChoiceItems(items, checkItems, (dialog, which, isChecked) -> {
             checkItems[which] = isChecked;
             String currentItem = fruit_list.get(which);
+
+
             if (currentItem == "Апельсин") {
                 Toast toast = Toast.makeText(getApplicationContext(), "Всё верно", Toast.LENGTH_SHORT);
                 toast.show();
+
             } else {
                 Toast toast = Toast.makeText(getApplicationContext(), currentItem + " - это не фрукт", Toast.LENGTH_SHORT);
+
                 toast.show();
             }
         });
@@ -127,7 +132,10 @@ public class MainActivity extends AppCompatActivity {
                         .setSmallIcon(R.drawable.baseline_person_24)
                         .setContentTitle("Студент")
                         .setContentText("Казунина Софья Т-403901 ИСиТ")
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                        .setStyle(new NotificationCompat.BigPictureStyle()
+                                 .bigPicture(BitmapFactory.decodeResource(getResources(),
+                                            R.drawable.img)));
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
